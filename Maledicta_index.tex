@@ -1,0 +1,26 @@
+\documentclass[a4paper]{article}
+
+% Sample LaTeX document using the Maledicta index.
+%
+% Compile this document with a Unicode-aware LaTeX implementation
+% such as xelatex, not pdflatex or latex!
+
+\usepackage{fullpage}
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{Times New Roman}
+\usepackage[pdfusetitle]{hyperref}
+\begin{document}
+\title{Maledicta article index}
+\author{Tristan Miller}
+\maketitle
+\nocite{*}
+\bibliographystyle{unsrt}
+\bibliography{Maledicta_index}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-engine: xetex
+%%% TeX-master: t
+%%% End:
