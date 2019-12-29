@@ -60,6 +60,9 @@ you should invoke the script as `/PATH/TO/gawk -f covert_index.gawk`,
 substituting `/PATH/TO/` with your actual path to Gawk, or eliminating it
 entirely if Gawk is already in your command path.
 
+Alternatively, you can use the included `Makefile` to generate all
+formats and a PDF index.
+
 
 Copyright and licensing
 -----------------------
