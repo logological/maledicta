@@ -51,8 +51,14 @@ to convert the index to various other formats:
   commands, so you should probably use a UTF-8–aware document
   processor such as [XeTeX](http://xetex.sourceforge.net/) and a font
   with the requisite Latin and Greek characters.
-  See [Maledicta_index.tex](Maledicta_index.tex) for an example.
+  See [`Maledicta_index.tex`](Maledicta_index.tex) for an example.
 * HTML: An [HTML](https://whatwg.org/) table.
+
+If you have Gawk installed in `/usr/bin/gawk`, then simply run the script
+as `./convert_index.gawk` and it will show usage instructions.  Otherwise,
+you should invoke the script as `/PATH/TO/gawk -f covert_index.gawk`,
+substituting `/PATH/TO/` with your actual path to Gawk, or eliminating it
+entirely if Gawk is already in your command path.
 
 
 Copyright and licensing
