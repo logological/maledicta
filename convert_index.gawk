@@ -25,8 +25,6 @@ BEGIN {
     }
     
     FS = "\t"
-    OFS = ","
-    ORS = "\r\n"
 }
 
 # Print the header
