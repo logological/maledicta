@@ -137,7 +137,7 @@ function to_bibtex(     firstyear, firstauthor, key) {
 
 function to_html(    bibtex, htmltitle, htmlauthor) {
     bibtex = to_bibtex()
-    bibtexurl = base64(bibtex)
+    bibtexurl = data_uri(bibtex)
 
     htmltitle = gensub(/([^h]){([^}]+)}/, "\\1\\2", "g", title)
     htmltitle = gensub(/\\emph{([^}]+)}/, "<em>\\1</em>", "g", htmltitle)
@@ -165,7 +165,7 @@ function to_html(    bibtex, htmltitle, htmlauthor) {
 function strip_markup(s) {
     s = gensub(/--/, "–", "g", s)
     s = gensub(/\\emph/, "", "g", s)
-    s = gensub(/[{}]/, "", "g", s)
+    s = gensub(/[{}\\]/, "", "g", s)
     return s;
 }
 
