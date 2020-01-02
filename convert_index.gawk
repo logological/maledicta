@@ -42,15 +42,15 @@ NR==1 {
 	    print "    <title>Maledicta article index</title>"
 	    print "    <meta charset='utf-8'>"
 	    print "  </head>"
-	    print "<body>"
-	    print "  <table>"
-	    print "    <thead>"
-	    print "      <tr>"
-	    for (i = 1; i <= NF; i++) print "        <th>" $i "</th>"
-	    print "        <th>export</th>"
-	    print "      </tr>"
-	    print "    </thead>"
-	    print "    <tbody>"
+	    print "  <body>"
+	    print "    <table>"
+	    print "      <thead>"
+	    print "        <tr>"
+	    for (i = 1; i <= NF; i++) print "          <th>" $i "</th>"
+	    print "          <th>export</th>"
+	    print "        </tr>"
+	    print "      </thead>"
+	    print "      <tbody>"
 	    break
 	case "bibtex":
 	    break
@@ -62,9 +62,10 @@ END {
 	case "plaintsv":
 	    break
 	case "html":
-	    print "    </tbody>"
-	    print "  </table>"
-	    print "</body>"
+	    print "      </tbody>"
+	    print "    </table>"
+	    print "  </body>"
+	    print "</html>"
 	    break
 	case "bibtex":
 	    break
@@ -144,20 +145,20 @@ function to_html(    bibtex, htmltitle, htmlauthor) {
     htmltitle = gensub(/\\&/, "\\&amp;", "g", htmltitle)
     htmlauthor = gensub(/[{}]/, "", "g", author)
     htmlauthor = gensub(/;/, "; ", "g", htmlauthor)
-    return "      <tr>\n" \
-	"        <td>" htmltitle "</td>\n" \
-	"        <td>" htmlauthor "</td>\n" \
-	"        <td>" startpage "</td>\n" \
-	"        <td>" strip_markup(pages) "</td>\n" \
-	"        <td>" volume "</td>\n" \
-	"        <td>" strip_markup(number) "</td>\n" \
-	"        <td>" strip_markup(year) "</td>\n" \
-	"        <td>" month "</td>\n" \
-	"        <td>" isbn "</td>\n" \
-	"        <td>" issn "</td>\n" \
-	"        <td>" journal "</td>\n" \
-	"        <td><a target='_blank' href='" bibtexurl "'>BibTeX</a></td>\n" \
-	"      </tr>"
+    return "        <tr>\n" \
+	"          <td>" htmltitle "</td>\n" \
+	"          <td>" htmlauthor "</td>\n" \
+	"          <td>" startpage "</td>\n" \
+	"          <td>" strip_markup(pages) "</td>\n" \
+	"          <td>" volume "</td>\n" \
+	"          <td>" strip_markup(number) "</td>\n" \
+	"          <td>" strip_markup(year) "</td>\n" \
+	"          <td>" month "</td>\n" \
+	"          <td>" isbn "</td>\n" \
+	"          <td>" issn "</td>\n" \
+	"          <td>" journal "</td>\n" \
+	"          <td><a target='_blank' href='" bibtexurl "'>BibTeX</a></td>\n" \
+	"        </tr>"
 }
 
 # Strip the TeX markup from the string
