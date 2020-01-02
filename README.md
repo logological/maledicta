@@ -63,6 +63,10 @@ entirely if Gawk is already in your command path.
 Alternatively, you can use the included `Makefile` to generate all
 formats and a PDF index.
 
+You can also view [a pre-generated (and slightly differently styled)
+HTML table](https://logological.org/maledicta), or download [a
+pre-generated BibTeX file](https://logological.org/maledicta.bib).
+
 
 Copyright and licensing
 -----------------------
